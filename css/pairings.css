@@ -1,0 +1,56 @@
+#pairing {
+	height: 200px;
+	width:65%;
+	margin-top:160px;
+	margin-bottom:50px;
+	margin-right:14%;
+	padding:0px;
+	background:white;
+	float:right;
+	background-color: white;
+}
+
+#pairing ul {
+	text-decoration:none;
+	float:right;
+}
+
+#pairing ul li{
+	text-decoration:none;
+	padding-bottom:180px;
+}
+
+#photo {
+	float:left;
+	margin: 5%;
+	height: 170px;
+	width:20%;
+	overflow:hidden;
+	display:block;
+	
+}
+
+#desc {
+	padding-left:10px;
+	float:left;
+	width:40%;
+	margin:2%
+
+}
+
+#price {
+	width:15%;
+	margin:10px;
+	float:right;
+	text-align:center;
+}
+
+.title {
+	font-size: 18px;
+	font-weight:bold;
+}
+
+
+.shortdesc {
+	font-size: 14px;
+}
