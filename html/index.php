@@ -7,9 +7,8 @@
         <link href="../css/slideshow.css"  rel="stylesheet">
     </head>
     <body>
-        <header>
-                <?php include './header.php';?>
-        </header>
+         <?php include './header.php';?>
+       
         
          <div class="section">
 		<p id="top">                     
@@ -49,7 +48,7 @@
                     Romans in their Bacchanalia; Judaism also incorporates it in the Kiddush and Christianity in the Eucharist.</p>     
 <div>
 <a href="#top" >
-<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:820px; position:relative;"/> </a>
+<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1290px; position:relative;"/> </a>
 </div>           
  </div>
 	

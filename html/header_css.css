@@ -8,9 +8,8 @@ and open the template in the editor.
     Author     : Priyanka
 */
 
-
-
-#header{
+/*pp*/
+#header{
     background-color:#B8B894;//#CCCCB3;
     width: 80%; height: 18%;  margin-left: 5%; position: fixed;
     z-index: 9999;  top:0; // overflow: auto;
@@ -23,11 +22,11 @@ and open the template in the editor.
 
 
 #captionheader{
-    position: absolute; padding-top: 5%;  margin-left:-20px;font-style: italic;  font-weight: bold; font-size: 16px;
+    position: absolute; padding-top: 5.5%;  margin-left:-20px;font-style: italic;  font-weight: bold; font-size: 18px;
 }
 
 #searchWrapper{
- display:inline-block; position: absolute; top: 2%; left:45%;   
+ display:inline-block; position: absolute; top: 2%; left:65%;   
 }
 
 
@@ -48,7 +47,7 @@ padding:0;}
 }
 
 #topNav{
-    margin-top: 6.5%; margin-left: 22%;
+    margin-top: 8.4%; margin-left: 32%;
 }
 
 
@@ -66,7 +65,7 @@ li:first-child a { border-left:none; }
 
 li:first-child:hover { background:url(../fallback/navOverLeft.gif) no-repeat 0 0; }
 
-li a { display:block; padding:10px 20px; padding-left: 37px;border-left:1px solid #999; border-right:1px solid #222; color:#eee;text-align:left; text-decoration:none; }//wines
+li a { display:block; padding:10px 100px; padding-left: 37px;border-left:1px solid #999; border-right:1px solid #222; color:#eee;text-align:left; text-decoration:none; }//wines
 
 li li { width:auto; clear:left; }
 
@@ -76,7 +75,7 @@ li li:hover { background-image:none; }
 
 ul li li a:hover { border-right:none; }
 
-ul ul { display:none; padding-left:78px; position:absolute; left:2px; background-color: darkred;width: 80px; }
+ul ul { display:none; padding-left:10px; position:absolute; left:2px; background-color: darkred;width: 150px; }
 
 ul li:hover ul { display:block; }
 

@@ -21,9 +21,9 @@ and open the template in the editor.
          <link href="../css/login_css.css"  rel="stylesheet">
     </head>
     <body>
-	<header>
+	
            <?php include './header.php';?>
-	</header>
+	
         </br>
         <div class="section">
 
@@ -51,7 +51,7 @@ Please start shopping on Wine.com by first using the state drop-down menu to sel
 
 <div>
 <a href="#top" >
-<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:820px; position:relative;"/> </a>
+<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1290px; position:relative;"/> </a>
 </div>	
 </div>
 	<br>
