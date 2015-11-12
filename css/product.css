@@ -1,0 +1,84 @@
+#main{
+  width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
+  font-family: cursive; position:inherit;
+}
+
+#prodImg{
+    float:left;
+    padding:10px;
+}
+
+#prodInfo{
+  width:250px;
+  height: auto;
+  float:left;
+  padding-left:50px;
+}
+#prodName{
+  color: darkred;
+  font-size:20px;
+}
+#prodInfo span{
+  /*font-size:10px;*/
+}
+#cartForm{
+  width:200px;
+  height: auto;
+  margin-left:600px;
+  margin-top:100px;
+  padding: 10px;
+  border: 2px solid #B8B894;
+  border-radius: 20px;
+}
+
+#cartForm td{
+  padding:5px;
+}
+
+.container{
+  clear:both;
+			width: 530px;
+      height: auto;
+      margin-left:300px;
+		}
+
+    .addtocartBtn {
+        background-color: darkred;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size:14px;
+        float: left;
+        border-radius: 7px;
+        height: 30px;
+        width: 100px;
+    }
+
+		ul.tabs{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		ul.tabs li{
+			background: none;
+			color: white;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+      height: 15px;
+		}
+
+		ul.tabs li.current{
+			background-color: #B8B894;
+			color: white;
+		}
+
+		.tab-content{
+			display: none;
+			background-color: #B8B894;
+			padding: 15px;
+		}
+
+		.tab-content.current{
+			display: inherit;
+		}
