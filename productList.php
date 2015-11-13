@@ -51,13 +51,13 @@ and open the template in the editor.
                         while ($row = $result->fetch_assoc()) {
                             ?>
                             <tr> 
-                                <td><?php echo $row['SKU_ID'] ?></td> 
-                                <td><?php echo $row['SKU_DESC'] ?></td> 
+                                <td><?php echo $row['SKU ID'] ?></td> 
+                                <td><?php echo $row['SKU DESC'] ?></td> 
                                 <td><?php echo $row['TYPE'] ?></td> 
                                 <td><?php echo $row['COUNTRY'] ?></td> 
                                 <td><?php echo $row['PRICE'] ?></td> 
 
-                                <td><a href="product.php?page=product&action=add&id=<?php echo $row['SKU_ID'] ?>  onclick="display()">Add to cart</a></td> 
+                                <td><a href="product.php?page=product&action=add&id=<?php echo $row['SKU ID'] ?>  onclick="display()">Add to cart</a></td> 
                             </tr> 
                             <?php
                         }
