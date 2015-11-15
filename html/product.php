@@ -23,18 +23,18 @@ $error=true;
 $errormsg=" No product with this ID exist";
 }
 else{
-$conn = mysqli_connect('localhost', 'root' ,'',"winestore");
+$conn = mysqli_connect('localhost', 'root' ,'',"test1");
 if($conn->connect_error){
 	die("Connection failed!" .$conn->connect_error);
 }
 else{
    $pID = $_GET['pID'];
-   $sql = "SELECT * FROM `products` WHERE `SKU ID` = $pID";
+   $sql = "SELECT * FROM `products` WHERE `SKU_ID` = $pID";
    $result = $conn->query($sql);
    if($result->num_rows > 0){//sucess
      $row = $result->fetch_assoc();
-      $prodID = $row['SKU ID'];
-      $prodName=$row['SKU DESC'];
+      $prodID = $row['SKU_ID'];
+      $prodName=$row['SKU_DESC'];
       $prodRegion=$row['REGION'];
       $alcoPercent=$row['ABV'];
       $import=$row['NAT/IMP'];
