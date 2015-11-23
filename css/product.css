@@ -1,6 +1,6 @@
 #main{
-  width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
-  font-family: cursive; position:inherit;
+  width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%; margin-bottom:5%; padding-bottom:10px;
+  font-family: cursive;
 }
 
 #prodImg{
@@ -24,9 +24,9 @@
 #cartForm{
   width:200px;
   height: auto;
-  margin-left:600px;
+  margin-left:700px;
   margin-top:100px;
-  padding: 10px;
+  padding: 20px;
   border: 2px solid #B8B894;
   border-radius: 20px;
 }
@@ -37,9 +37,9 @@
 
 .container{
   clear:both;
-			width: 530px;
+			width: 675px;
       height: auto;
-      margin-left:300px;
+      margin-left:265px;
 		}
 
     .addtocartBtn {
@@ -82,3 +82,17 @@
 		.tab-content.current{
 			display: inherit;
 		}
+
+    #imgID{
+      width:220px;
+      height:220px;
+      margin-left:0px;
+      padding-left:0px;
+    }
+
+
+    footer {
+      clear: both;
+      padding-top: 0px;
+      width:100%;
+    }

@@ -1,4 +1,54 @@
-#section{
-clear: both;
-margin-left: 20px;
+
+#scroller {
+    clear: both;
+    position: relative;
+    width: 1000px;
+    height: 220px;
+    margin: 0 auto;
+}
+#scroller .innerScrollArea {
+
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#scroller ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+#scroller li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: absolute;
+    width:200px;
+    height: 500px;
+    text-align: center;
+}
+#scroller .innerScrollArea .imgID {
+  width:130px;
+   height:100px;
+   margin-left: 0px;
+}
+#scroller .innerScrollArea .productname{
+  color: Black;
+  font-size:12px;
+  text-align: center;
+}
+
+#scroller .innerScrollArea .cartBtn {
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size:12px;
+    border-radius: 7px;
+    height: 20px;
+    width: 100px;
+    margin-left: 0px;
 }

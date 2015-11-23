@@ -1,17 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Winery</title>
-        <meta charset="UTF-8">
-          <link href="../css/relatedProduct.css"  rel="stylesheet">
-      </head>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Winery</title>
+        <link href="../css/relatedProduct.css"  rel="stylesheet">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+</head>
 <body>
-  <div id="section">
-<h2>Related Products</h2>
-<a href="product.php"><img id="prodImg" width="50" height="30"  src="../img/s-l300.jpg" /></a>
-<br/>
-<p id="prodName">Red Rose Wine</p>
-<br/>
 
+  <?php
+
+  //execute the SQL query and return records
+    $conn = mysqli_connect('localhost', 'root' ,'',"winestore");
+    if($conn->connect_error){
+     die("Connection failed!" .$conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM `products` WHERE `TYPE` LIKE '$type'";
+    $result = $conn->query($sql);
+    //fetch tha data from the database
+    ?>
+    <h2>Featured Products</h2>
+  <div id="scroller">
+     <div class="innerScrollArea">
+         <ul>
+           <?php
+           foreach($result as $pro) {
+             $prodID = $pro['SKU ID'];
+             $prodName=$pro['SKU DESC'];
+             ?>
+             <li>
+   <a href="./product.php?pID=<?=$prodID?>">
+     <img class="imgID" src="../img/wine<?=$prodID?>.jpg" alt="your wine" width="50px" height="50px">
+   </a>
+
+     <a href="#"><span class="productname"><?=$prodName?></span></a>
+
+     <button class="cartBtn"  type="submit" form="form1" value="Submit">Add to Cart</button> <!--Add to Cart Button!!!!!!! Currently does not do anything  -->
+   </li>
+   <?php
+   }
+
+   ?>
+         </ul>
+     </div>
+ </div>
+<script src="../js/relatedProduct.js"></script>
 </body>
 </html>
