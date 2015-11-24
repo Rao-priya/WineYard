@@ -20,13 +20,15 @@ and open the template in the editor.
    top:0; left:0;
 }
 
-
+#searchdiv { display:inline; width: 100%;   position:relative; height:90px; }
+.cart_image { position: relative;  width: 100%;  display: inline; }
+#sugges { visibility:hidden;}
 #captionheader{
     position: absolute; padding-top: 5.5%;  margin-left:-20px;font-style: italic;  font-weight: bold; font-size: 18px;
 }
 
 #searchWrapper{
- display:inline-block; position: absolute; top: 2%; left:65%;   
+ display:inline-block; position: absolute; top: 2%; left:45%;  
 }
 
 
@@ -47,10 +49,12 @@ padding:0;}
 }
 
 #topNav{
-    margin-top: 8%; margin-left: 32%;
+    margin-top: 8.4%; margin-left: 32%;
 }
 
-
+.a_color {
+color:white;
+}
 ul { display:block; padding:0;  background-color:darkred; font:16px Tahoma, Sans-serif;  }
 
 ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
@@ -84,6 +88,9 @@ li li { height:auto; width:98%; left:-2px; }
 ul ul a:hover { background-color: firebrick;}//background:url(../fallback/subOverBG.png) repeat 0 0; }
 
 ul a span { height:7px; width:12px; margin-top:8px; text-indent:-5000px; overflow:hidden; background:url(../fallback/indicator.png) no-repeat 0 0; }
+
 ul ul li { background:none; }
+
 ul ul li.last { margin-bottom:10px; }
+
 ul ul li a { padding:5px 10px; border-left:0; left:2px; font-size:14px; white-space:pre; }

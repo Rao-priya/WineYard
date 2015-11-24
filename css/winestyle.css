@@ -70,7 +70,7 @@ a:hover {
 /* selected link */
 a:active {
   text-decoration: none;
-  color: black;
+  color:black;
 }
 
 footer {

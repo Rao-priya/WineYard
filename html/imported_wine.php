@@ -7,7 +7,9 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
   </head>
 <body>
+<p id ="top"></p>
 <header>
+<?php session_start();  ?> 
 <?php include './header.php';?>
 
 </header>
@@ -106,7 +108,8 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
        ?>
      </div>
 </a>
-    <button type="submit" form="form1" value="Submit">Add to Cart</button> <!--Add to Cart Button!!!!!!! Currently does not do anything  -->
+   <a href="imported_wine.php?page=imported_wine&action=add&id=<?php echo $pID ?>">
+<button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
     </p>
   </td>
 
@@ -170,7 +173,10 @@ else
   ?>
 
 </div>
-
+</div>
+<div>
+<a href="#top" >
+<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1220px; position:relative;"/> </a>
 </div>
 <script>
 
@@ -220,7 +226,31 @@ return opts;
 }
 
 </script>
+	
+ <?php
+        if (isset($_GET['action']) && $_GET['action'] == "add") {
+            
+            //session_start();
+            $id = intval($_GET['id']);
 
+            if (isset($_SESSION['cart'][$id])) {
+                $_SESSION['cart'][$id]['quantity'] ++;
+                
+            } else {
+                $sql_s = "SELECT * FROM `products` WHERE `SKU ID` = $id"; 
+                $result_s = $conn->query($sql_s);
+                if ($result_s) {
+
+                    $row_s = $result_s->fetch_assoc();
+                    $_SESSION['cart'][$row_s['SKU ID']] = array(
+                        "quantity" => 1,
+                        "price" => $row_s['PRICE']);
+                   
+                }
+            }
+        }
+        print_r($_SESSION);
+        ?>
 <footer>
 <?php include './footer.php';?>
 </footer>

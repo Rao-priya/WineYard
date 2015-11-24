@@ -7,7 +7,12 @@
     float:left;
     padding:10px;
 }
-
+button{
+  color: white;
+ background-color: firebrick;
+  border-radius: 4px;
+  margin-left:1px;
+}
 #prodInfo{
   width:250px;
   height: auto;

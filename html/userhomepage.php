@@ -15,18 +15,21 @@
       
  </head>
     <body>
+<?php 
+session_start(); 
 
+?>
 <?php include './header.php';?>
 </br>
         <div class="section">
 <?php
-$name="";$pwd="";
+$name="";$pwd=""; $flag="unset";
 if (($_SERVER["REQUEST_METHOD"] == "POST") || isset($_POST["submit"])) {
 $name = $_POST['name'];
 $pwd = $_POST['pwd'];
 
 //get mysql connection
-$conn = mysqli_connect('localhost', 'root' ,'',"test1");
+$conn = mysqli_connect('localhost', 'root' ,'','winestore');
 if($conn->connect_error){
 	die("Connection failed!" .$conn->connect_error);
 }
@@ -39,7 +42,8 @@ else{
      $row = $result->fetch_assoc();
     // session_start();
      $_SESSION['name']=$row["username"];
-     echo '<h3>'.'Welcome: '.$row["username"].'</h3>';
+     
+     echo '<h3>'.'Welcome: '. $_SESSION['name'].'</h3>';
      echo  '<p><a href =./logout.php>Signout</a></p>';
     
    }
@@ -52,6 +56,11 @@ else{
 }//if
 
 ?>  
+<?php if(isset($_SESSION['name'])){
+?>
+            <h3>Welcome <?php echo $_SESSION['name']?></h3>
+            <h3><a href =./logout.php>Sign out</a></h3>
+<?php }?>            
 <script>
 function discount() {
  var x = Math.floor((Math.random() * 10) + 1);
@@ -61,7 +70,17 @@ document.getElementById("discount").style.visibility ="hidden";
 </script>
 <p id="discount"> For holiday discounts <a href="#" onclick= "discount()" > click here!</a></p>
 <p id="discount_display"></p> 
+<?php 
+  if (isset($_SESSION['cart'])) {
+	echo "hello";
 
+}
+/*
+if(!isset($_SESSION['name'])){
+header("Location: ../html/login.php");
+die;
+}*/
+?>
 </div>
 <footer>
 <?php include './footer.php';?>

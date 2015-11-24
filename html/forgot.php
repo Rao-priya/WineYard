@@ -41,7 +41,7 @@
 <?php
 if(isset($_POST['submit']))
 { 
-    $conn = mysqli_connect('localhost', 'root' ,'',"test1");
+    $conn = mysqli_connect('localhost', 'root' ,'',"winestore");
     if($conn->connect_error){
 	die("Connection failed!" .$conn->connect_error);
 }

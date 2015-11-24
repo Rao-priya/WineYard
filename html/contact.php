@@ -20,10 +20,10 @@ and open the template in the editor.
          <link href="../css/login_css.css"  rel="stylesheet">
     </head>
     <body>
-<header>
+
         <?php include './header.php';?>
-</header>
-        </br>
+
+        </br></br>
         <div class="section">
             <form action="mailto:prao@scu.edu?" 
                   method="POST" ENCTYPE="text/plain">

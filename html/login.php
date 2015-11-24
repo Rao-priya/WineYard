@@ -14,7 +14,7 @@
    </style>
     </head>
     <body>       
-  
+  <?php session_start(); ?>
          <?php include './header.php';?>
 </br>
         <div class="section">

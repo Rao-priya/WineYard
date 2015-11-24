@@ -74,7 +74,7 @@ else{
 
 
 <div id="cartForm">
-            <form method="post" enctype="multipart/form-data" action="testcart.php">
+           <form method="post" enctype="multipart/form-data" action=#> 
               <table>
                 <tr>
                   <td>
@@ -87,11 +87,15 @@ else{
             <label for="qty">Qty: </label></td><td> <input type="text" size="2" name="qty" value="1"/></td></tr>
             <tr>
               <td>
-                  <input name="id" type="hidden" value="<?=$prodID?>">
-            <input type="submit" value="Add To Cart" class="addtocartBtn"></td></tr>
+                  <input name="id" type="hidden" value="<?=$prodID?>">    
+                  <a href="pairing_beef.php?page=pairing_beef&action=add&id=<?php echo $pID ?>">
+                  <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
+                        
+                
+           </td></tr>
 
           </table>
-            </form>
+           </form>
 </div>
 
 
