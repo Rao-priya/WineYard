@@ -60,17 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $addr_err="Only letters and white spaces allowed";
       }
       $city=remove_whitespaces($_POST["city"]); //first remove whietspaces from name field
-      if(!preg_match("/^[a-zA-Z]*$/",$city)){ // regular expression for name to contain only alphabets
+      if(!preg_match("/^([A-Za-z]+ )+[A-Za-z]+$|^[A-Za-z]+$/",$city)){ // regular expression for name to contain only alphabets
           $city_err="Only letters and white spaces allowed";
       }
      $zipcode=remove_whitespaces($_POST["zipcode"]);
      if(!preg_match('/^[0-9]{5}([- ]?[0-9]{4})?$/', $zipcode)){
        $zipcode_err = "not a valid zipcode";
      }
-    /* $phone=remove_whitespaces($_POST["phone"]);
+     $phone=remove_whitespaces($_POST["phone"]);
      if(!preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $phone)) {
         $phone_err="not a valid phone number";
-      }*/
+      }
+echo $fname . $lname. $address. $city. $zipcode. $phone.$cardnumber. $cardId;
 //wine law prohibition
 if($zipcode == $dry){
 echo " By law of the state cannot ship wine to this zipcode . Sorry!";
@@ -163,7 +164,7 @@ function remove_whitespaces($data){
 		<span class="error">*<?php echo $city_err; ?></span><br/><br>
                 <input type="text" name="zipcode" placeholder="Zip Code" required/>
 		<span class="error">*<?php echo $zipcode_err; ?></span><br>
-                <input type="text" name="phone" placeholder="Phone#" required/>
+                <input type="text" name="phone" placeholder="111-222-4444" required/>
 		<span class="error">*<?php echo $phone_err; ?></span><br/>
 
                  <p class ="heading">Card Information</p>

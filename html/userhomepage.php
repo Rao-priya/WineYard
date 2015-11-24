@@ -58,7 +58,9 @@ else{
 ?>  
 <?php if(isset($_SESSION['name'])){
 ?>
-            <h3>Welcome <?php echo $_SESSION['name']?></h3>
+<h3><span>
+<img src="../img/person.png" alt="account" width=50 height=50 />
+            </span>Welcome <?php echo $_SESSION['name']?></h3>
             <h3><a href =./logout.php>Sign out</a></h3>
 <?php }?>            
 <script>

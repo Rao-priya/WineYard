@@ -8,13 +8,9 @@
 	 <script language="javascript" type="text/javascript">
 function reload_billing() 
 {
-    window.location.href = "../html/billing_info.php;
+    window.location.href = "../html/billing_info.php";
 }
-$(document).ready(function(){
-    $("button").click(function(){
-        $("#div1").load("../html/billing_info.php");
-    });
-});
+
 </script>
     </head>
     <body>
@@ -55,6 +51,8 @@ unset($_SESSION['cart']);
 
 
 ?>
+
+
 <h1>View cart</h1> 
             <form method="post" > 
 
@@ -115,14 +113,24 @@ unset($_SESSION['cart']);
  <?php } 
  else {?>
             <p> Shopping cart is empty.</p>
-<div class="button"><a href= "../html/product.php" class="abutton"> Continue Shopping </a></div>
+<div class="button"><a href= "../html/country_wine.php" class="abutton"> Continue Shopping </a></div>
 </br>
 	
 <?php } ?>
 </div>
  <div class="v-separator"></div>
-<iframe class="slide-container" src="" name="iframe_billing"></iframe>
+ <?php
+                    if ((isset($_SESSION['cart']))&& isset($_SESSION['name'])) {
+                        ?>
+                <script>
+                    debugger;
+                     document.getElementById("div1").style.display = "none";
+                       
+                </script>
+                <?php
+                    }?>
  <div class="slide-container" id="div1">
+
                   <?php
                   
                     if (isset($_SESSION['cart'])) {
@@ -137,7 +145,7 @@ unset($_SESSION['cart']);
 <br>
 
 <h3>Check out as </h3>
-<div class="button" id="guest"><a href = "../html/billing_info.php" class="abutton" target ="iframe_billing"onclick = "reload_billing()"> Guest user </a></div>
+<div class="button" ><a href = "../html/billing_info.php" class="abutton" onclick = "reload_billing()"> Guest user </a></div>
 <br>
 
 </div>

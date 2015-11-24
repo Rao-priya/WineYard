@@ -44,6 +44,9 @@ and open the template in the editor.
                         xhttp.open("GET", "../html/search.php?q=" + str, true);
                         xhttp.send();
                     }
+		  function cartItem_Count(x) {
+			document.getElementById("x").innerHTML = <?php echo count($_SESSION['cart']); ?>
+		   }
 
                 </script>
 
@@ -53,13 +56,21 @@ and open the template in the editor.
                 </div>
 
                 <div class="cart_image">
-                    <a href="../html/cart.php" ><img src="../img/cart-icon.png" alt="cart" class="imgclass"/></a>
-                    <h2 id="item_count"><!--<?php echo count($_SESSION['cart']); ?> --></h2>
-                
-
-               <a href="../html/login.php" ><img src="../img/login_red_icon.png" alt="login" class="imgclass"/></a>
- </div> 
-<p id="sugges">Suggestions: <span id="txtHint"></span></p>
+                    <a href="../html/cart.php" ><img src="../img/cart-icon.png" alt="cart"  class="imgclass" onmouseover ="cartItem_Count(this)"/></a>
+                    
+                </div> 
+<a href="../html/login.php" ><img src="../img/login_red_icon.png" alt="login" class="imgclass"/></a>
+ <?php  
+if (isset($_SESSION['name'])) {
+?> 
+<a href = "../html/userhomepage.php" ><img src="../img/person.png" alt="account" width=50 height=50 /></a>
+<?php 
+echo "Welcome ".$_SESSION['name'];
+} ?> 
+               
+ 		
+<!-- session cart count <span><h2 id ="x" style="left:5%;"> </h2></span>-->
+		<p id="sugges">Suggestions: <span id="txtHint"></span></p>
                
 
             </div>
@@ -68,7 +79,7 @@ and open the template in the editor.
                 <ul>
                     <li><a href="#" title="Nav Link 1">Wines</a>
                         <ul>  
-                            <li><a href="#" title="Sub Nav Link 1" class="a_color">Varieties</a></li>
+                           
                             <li><a href="./country_wine.php" title="Country Wine" class="a_color">Country Wine</a></li>
                             <li><a href="./imported_wine.php" title="Imported Wine" class="a_color">Imported Wine</a></li>
                         </ul>
@@ -100,12 +111,14 @@ and open the template in the editor.
                     </li>
 
                     <li><a href="#" title="Nav Link 1">Contact Us</a>
-                        <ul>  
+                       <ul>  
                             <li><a href="#" title="Sub Nav Link 1">Contact Form</a></li>
                             <li><a href="#" title="Sub Nav Link 1">About Us</a></li>
 
                         </ul>
                     </li>
+
+
 
                 </ul>
             </nav>

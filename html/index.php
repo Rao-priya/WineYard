@@ -7,6 +7,10 @@
         <link href="../css/slideshow.css"  rel="stylesheet">
     </head>
     <body>
+<?php 
+session_start(); 
+
+?>
          <?php include './header.php';?>
        
         
