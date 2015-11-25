@@ -52,7 +52,7 @@ and open the template in the editor.
 
                 <div id="searchdiv">
                     <input id='searchBox' type='text' placeholder='Search your favorite wine here ...' name="wine"  onkeyup="showHint(this.value)"/>    
-                    <a onclick="location.href = '../html/search.php?wine=' + document.getElementById('searchBox').value;"><img src="../img/search-icon.png" alt="search" class="imgclass" /></a>
+                    <a onclick="location.href='../html/search.php?wine='+ document.getElementById('searchBox').value;"><img src="../img/search-icon.png" alt="search" class="imgclass" /></a>
                 </div>
 
                 <div class="cart_image">
@@ -70,7 +70,7 @@ echo "Welcome ".$_SESSION['name'];
                
  		
 <!-- session cart count <span><h2 id ="x" style="left:5%;"> </h2></span>-->
-		<p id="sugges">Suggestions: <span id="txtHint"></span></p>
+		<p id="sugges">Suggestion: <span id="txtHint"></span></p>
                
 
             </div>

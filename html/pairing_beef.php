@@ -9,7 +9,7 @@
 <body>
 <p id ="top"></p>
 <header>
-  <?php session_start();  ?> 
+  <?php session_start(); $iam=1; ?> 
 <?php include './header.php';?>
 
 </header>
@@ -228,6 +228,7 @@ return opts;
 
 </script>
    <?php
+
         if (isset($_GET['action']) && $_GET['action'] == "add") {
             
             //session_start();
@@ -250,6 +251,9 @@ return opts;
             }
         }
         print_r($_SESSION);
+//echo  "---".$_SESSION['cart'][11]['index'];
+
+//echo "**".array_search("1",array_keys($_SESSION['cart']['index']));
         ?> 
 <footer>
 <?php include './footer.php';?>

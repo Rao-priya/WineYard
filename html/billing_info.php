@@ -12,11 +12,11 @@
 }
  #shipping{
 
-width:400px;
- height:630px;    
+width:570px;
+ height:600px;    
     padding: 10px;
     border: 1px solid black;
-margin-left:40%;
+margin-left:10%;
  background-color:#B8B894;
 }
 #card_info{
@@ -28,8 +28,13 @@ font-size:17px;
 font-weight:bold;
 }
 input{
-padding:4px;
+padding:5px;
+float: left; margin: 0 50px 0 0;
 }
+select{
+float: left; margin: 0 50px 0 0;
+}
+
 </style>
     </head>
     <body>
@@ -37,19 +42,19 @@ padding:4px;
 <?php
 session_start(); 
 if(!isset($_SESSION['cart'])){
-header("Location: ../html/product.php");
+header("Location: ../html/cart.php");
 }
 ?>
 <!-- <?php //include './header.php';?> -->
 <br/>
 <?php
-$fname =""; $lname = ""; $address="" ; $city=""; $zipcode=""; $phone=""; $cardnumber=""; $cardId="";
+$fname =""; $lname = ""; $address="" ; $city=""; $zipcode=""; $phone=""; $cardnumber=""; $cardId="";$no_error="";
 $fname_err =""; $lname_err = ""; $addr_err="" ; $city_err=""; $zipcode_err =""; $phone_err=""; $cardno_err=""; $cardId_err="";
 $dry=99501;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $fname=remove_whitespaces($_POST["firstname"]); //first remove whietspaces from name field
       if(!preg_match("/^[a-zA-Z]*$/",$fname)){ // regular expression for name to contain only alphabets
-          $fname_err="Only letters and white spaces allowed";
+          $fname_err="Incorrect FirstName. Alphabets only";
       }
       $lname=remove_whitespaces($_POST["lastname"]); //first remove whietspaces from name field
       if(!preg_match("/^[a-zA-Z]*$/",$lname)){ // regular expression for name to contain only alphabets
@@ -68,14 +73,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $zipcode_err = "not a valid zipcode";
      }
      $phone=remove_whitespaces($_POST["phone"]);
-     if(!preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $phone)) {
+     if(!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $phone)) {
         $phone_err="not a valid phone number";
       }
 echo $fname . $lname. $address. $city. $zipcode. $phone.$cardnumber. $cardId;
-//wine law prohibition
-if($zipcode == $dry){
-echo " By law of the state cannot ship wine to this zipcode . Sorry!";
+if($no_error){
+//header("Location: ../html/finalreview.php");die;
+
 }
+
 }//if
 function remove_whitespaces($data){
     $data = trim($data);
@@ -85,20 +91,21 @@ function remove_whitespaces($data){
 }
 ?>
 <div class="section">
+
 <div id="shipping">
 
             <p class ="heading">Shipping Information </p>
              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" 
                   method="POST"  class="contactborder">
 
-                <input type="text" name="firstname" value="<?php echo $fname; ?>" placeholder="First Name" required/>
-		<span class="error">*<?php echo $fname_err; ?></span><br><br>
+                <input type="text" name="firstname" value="<?php if(!$fname_err) {echo $fname;} ?>" placeholder="<?php if($fname_err) {  echo $fname_err; } else {echo 'First Name' ;} ?>" required/>	
                 <input type="text" name="lastname"value="<?php echo $lname; ?>" placeholder="Last Name" required/>
+	        
 		<span class="error">*<?php echo $lname_err; ?></span><br><br>
                 <input type="text" name="address" placeholder="Address" required/>
 		<span class="error">*<?php echo $addr_err; ?></span><br><br>
-                <input type="text" name="address2" placeholder="Address 2 (optional)"/><br><br>
-                <select>
+                <!--<input type="text" name="address2" placeholder="Address 2 (optional)"/><br><br> -->
+                <select name="options" id = "options" >
                     <option value="DE">DE</option>
                     <option value="AA">AA</option>
                     <option value="AE">AE</option>
@@ -160,10 +167,11 @@ function remove_whitespaces($data){
                     <option value="WY">WY</option>
 
                 </select>
-                <input type="text" name="city" placeholder="city" required/>
-		<span class="error">*<?php echo $city_err; ?></span><br/><br>
+                <span class="error"><p id ="state_err"></p></span><br/><br>
+                <input type="text" name="city" placeholder="city" required/>		
                 <input type="text" name="zipcode" placeholder="Zip Code" required/>
-		<span class="error">*<?php echo $zipcode_err; ?></span><br>
+		<span class="error"><?php echo $city_err; ?></span>
+		<span class="error">*<?php echo $zipcode_err; ?></span><br><br>
                 <input type="text" name="phone" placeholder="111-222-4444" required/>
 		<span class="error">*<?php echo $phone_err; ?></span><br/>
 
@@ -175,11 +183,11 @@ function remove_whitespaces($data){
                     <option value="AMEX">American Express</option>
                     <option value="JCB">JCB</option>
                     <option value="DISC">Discover</option>
-		</select><br/>
-                    <input type="text" name="cardnumber" placeholder="Card Number" required/>
-		    <span class="error">*<?php echo $cardno_err; ?></span><br/><br>
+		</select><br/><br>
+                    <input type="text" name="cardnumber" placeholder="Card Number" required/>    
 		    
 		    <input type="text" name="cardId" placeholder="Card ID#" required/>
+		    <span class="error"><?php echo $cardno_err; ?></span>
 		    <span class="error">*<?php echo $cardId_err; ?></span><br/><br>
                     <select>
                         <option value="">Month</option>
@@ -215,11 +223,46 @@ function remove_whitespaces($data){
 </br><br>
                    
 		<input type="reset" value="Reset">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Continue">
             </form>
 
 </div>
         </div>
+<script>
+document.getElementById('options').onchange = function() {
+
+     var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      myFunction(xhttp);
+    }
+  };
+  xhttp.open("GET", "../database/drycodes.xml", true);
+  xhttp.send();
+ }
+function myFunction(xml) {
+  var i,flag=0;
+  var xmlDoc = xml.responseXML;
+debugger;
+  var x = xmlDoc.getElementsByTagName("state");
+
+var state = document.getElementById('options').value;
+
+ for (i = 0; i <x.length; i++) { 
+if(state == x[i].childNodes[0].nodeValue){
+ document.getElementById("state_err").style.display ="visible";
+document.getElementById("state_err").innerHTML = " we are unable to ship wine "+
+ "to AL, AR, DE, KY, MS,  OK, RI, SD, or UT. Due to state laws we are "+
+"unable to expedite shipping to AZ or NJ";
+flag=1;
+}
+
+}
+if (flag == 0) { document.getElementById("state_err").style.display ="none";}
+
+  }
+
+</script>
 <!--
 <footer>
 <?php //include './footer.php';?>

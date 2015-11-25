@@ -18,7 +18,7 @@
          <?php include './header.php';?>
 </br>
         <div class="section">
-            <form action="./userhomepage.php" method="POST" name="login" target="../userhomepage.php">
+            <form action="../html/userhomepage.php" method="POST" name="login" >
                 <fieldset>
                     <legend> User Login</legend>
                     <label class="heading" for="name">UserName: </label>

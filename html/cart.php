@@ -8,9 +8,15 @@
 	 <script language="javascript" type="text/javascript">
 function reload_billing() 
 {
-    window.location.href = "../html/billing_info.php";
+   $("#div11").load("../html/billing_info.php");
 }
+function Login() 
+{ debugger;
+        $("#div11").hide();
+	 window.location.href = "../html/login.php";
 
+ 	 
+}
 </script>
     </head>
     <body>
@@ -119,17 +125,8 @@ unset($_SESSION['cart']);
 <?php } ?>
 </div>
  <div class="v-separator"></div>
- <?php
-                    if ((isset($_SESSION['cart']))&& isset($_SESSION['name'])) {
-                        ?>
-                <script>
-                    debugger;
-                     document.getElementById("div1").style.display = "none";
-                       
-                </script>
-                <?php
-                    }?>
- <div class="slide-container" id="div1">
+
+ <div class="slide-container" id="div11">
 
                   <?php
                   
@@ -137,7 +134,7 @@ unset($_SESSION['cart']);
 		?>
 <h1> Checkout </h1>
 <h3> Already have an account? </h3>
-<div class="button"><a href= "../html/login.php" class="abutton"> Login </a></div>
+<div class="button"><a href= "#" class="abutton" onclick = "Login()"> Login </a></div>
 </br>
 
 <h3> New Users </h3>
@@ -145,7 +142,7 @@ unset($_SESSION['cart']);
 <br>
 
 <h3>Check out as </h3>
-<div class="button" ><a href = "../html/billing_info.php" class="abutton" onclick = "reload_billing()"> Guest user </a></div>
+<div class="button" ><a href = "#" class="abutton" onclick = "reload_billing()"> Guest user </a></div>
 <br>
 
 </div>
@@ -153,7 +150,19 @@ unset($_SESSION['cart']);
 </div>
 <p>&nbsp;<p>
             </div>
-           
+            <?php
+                    if ((isset($_SESSION['cart']))&& isset($_SESSION['name'])) {   
+                        ?>
+                <script>
+                    debugger;
+                   
+                   
+			 $("#div11").load("../html/billing_info.php");
+
+
+                </script>
+                <?php
+                    }?>
             <footer >
                 <?php include './footer.php'; ?>
         </footer>

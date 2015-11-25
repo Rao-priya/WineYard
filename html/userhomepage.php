@@ -19,6 +19,8 @@
 session_start(); 
 
 ?>
+
+
 <?php include './header.php';?>
 </br>
         <div class="section">
@@ -43,8 +45,8 @@ else{
     // session_start();
      $_SESSION['name']=$row["username"];
      
-     echo '<h3>'.'Welcome: '. $_SESSION['name'].'</h3>';
-     echo  '<p><a href =./logout.php>Signout</a></p>';
+    // echo '<h3>'.'Welcome: '. $_SESSION['name'].'</h3>';
+    // echo  '<p><a href =./logout.php>Signout</a></p>';
     
    }
    else{
@@ -62,8 +64,10 @@ else{
 <img src="../img/person.png" alt="account" width=50 height=50 />
             </span>Welcome <?php echo $_SESSION['name']?></h3>
             <h3><a href =./logout.php>Sign out</a></h3>
-<?php }?>            
+<?php } ?>   
+         
 <script>
+
 function discount() {
  var x = Math.floor((Math.random() * 10) + 1);
 document.getElementById("discount_display"). innerHTML = "your discount is "+x+"$";
@@ -77,11 +81,7 @@ document.getElementById("discount").style.visibility ="hidden";
 	echo "hello";
 
 }
-/*
-if(!isset($_SESSION['name'])){
-header("Location: ../html/login.php");
-die;
-}*/
+
 ?>
 </div>
 <footer>
