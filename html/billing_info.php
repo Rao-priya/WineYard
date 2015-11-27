@@ -139,6 +139,7 @@ function remove_whitespaces($data){
 		<span class="error">*<?php echo $addr_err; ?></span><br><br>
                 <!--<input type="text" name="address2" placeholder="Address 2 (optional)"/><br><br> -->
                 <select name="options" id = "options" >
+		   <option selected="selected" value="">Select State</option>
                     <option value="DE">DE</option>
                     <option value="AA">AA</option>
                     <option value="AE">AE</option>
@@ -152,7 +153,7 @@ function remove_whitespaces($data){
                     <option value="CO">CO</option>
                     <option value="CT">CT</option>
                     <option value="DC">DC</option>
-                    <option selected="selected" value="">Select State</option>
+                    
                     <option value="FL">FL</option>
                     <option value="GA">GA</option>
                     <option value="GU">GU</option>
