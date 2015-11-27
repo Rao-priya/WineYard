@@ -245,8 +245,21 @@ return opts;
                     $_SESSION['cart'][$row_s['SKU ID']] = array(
                         "quantity" => 1,
                         "price" => $row_s['PRICE']);
+			if (count($_SESSION['cart'])) {//if set
+                		if (count($_SESSION['cart']) == 1) {
+                   			 $ii = 1;
+                    			$_SESSION['product-cart'][$ii] = $row_s['SKU ID'];
+                		}
+				else{
+             			   $ii = count($_SESSION['product-cart']) + 1;
+
+               			  $_SESSION['product-cart'][$ii] = $row_s['SKU ID'];
+				}
+              		 // echo "after -" . $ii;
+            		}//ifset
                    
                 }
+
             }
         }
         print_r($_SESSION);

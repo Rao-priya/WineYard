@@ -37,13 +37,16 @@ function Login()
         foreach($_POST['quantity'] as $key => $val) { 
             if($val==0) { 
                 unset($_SESSION['cart'][$key]); 
+		//echo $key;
+		$k = array_search($key,$_SESSION['product-cart']);//echo "$k-".$k;
+		$_SESSION['product-cart'][$k] = -1;//get key  from value
             }else{ 
                 $_SESSION['cart'][$key]['quantity']=$val; 
             } 
         } 
       if(count($_SESSION['cart']) == 0){
-//last item so unset session ofcart
-unset($_SESSION['cart']); 
+	//last item so unset session ofcart
+	unset($_SESSION['cart']); 
 		session_destroy();
 	}    
     } 
@@ -94,6 +97,7 @@ unset($_SESSION['cart']);
 
                                     $subtotal = $_SESSION['cart'][$row['SKU ID']]['quantity'] * $row['PRICE'];
                                     $totalprice+=$subtotal;
+					
                                     ?> 
                                     <tr> 
                                         <td><?php echo $row['SKU DESC'] ?></td> 
@@ -102,12 +106,15 @@ unset($_SESSION['cart']);
                                         <td><?php echo $_SESSION['cart'][$row['SKU ID']]['quantity'] * $row['PRICE'] ?>$</td> 
                                     </tr> 
                                     <?php
-                                }
+                                } 
                             }
                         }
                         ?> 
+			<tr> 
+                            <td colspan="4" style = "text-align:right">Tax: <?php echo 0.12*$totalprice; $totalprice = $totalprice + 0.12*$totalprice ;?></td> 
+                        </tr> 
                         <tr> 
-                            <td colspan="4">Total Price: <?php echo $totalprice ?></td> 
+                            <td colspan="4" style = "text-align:right">Total Price: <?php echo $totalprice ?></td> 
                         </tr> 
                    
 

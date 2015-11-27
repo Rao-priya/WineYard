@@ -48,39 +48,72 @@ header("Location: ../html/cart.php");
 <!-- <?php //include './header.php';?> -->
 <br/>
 <?php
-$fname =""; $lname = ""; $address="" ; $city=""; $zipcode=""; $phone=""; $cardnumber=""; $cardId="";$no_error="";
+$fname =""; $lname = ""; $address="" ; $city=""; $zipcode=""; $phone=""; $cardnumber=""; $cardId="";$no_error=0;
 $fname_err =""; $lname_err = ""; $addr_err="" ; $city_err=""; $zipcode_err =""; $phone_err=""; $cardno_err=""; $cardId_err="";
 $dry=99501;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $fname=remove_whitespaces($_POST["firstname"]); //first remove whietspaces from name field
       if(!preg_match("/^[a-zA-Z]*$/",$fname)){ // regular expression for name to contain only alphabets
-          $fname_err="Incorrect FirstName. Alphabets only";
+          $fname_err="Incorrect FirstName. Alphabets only"; $no_error = 1;
       }
       $lname=remove_whitespaces($_POST["lastname"]); //first remove whietspaces from name field
       if(!preg_match("/^[a-zA-Z]*$/",$lname)){ // regular expression for name to contain only alphabets
-          $lname_err="Only letters and white spaces allowed";
+          $lname_err="Only letters and white spaces allowed"; $no_error = 1;
       }
       $address=remove_whitespaces($_POST["address"]); //first remove whietspaces from name field
       if(!preg_match("/^[a-zA-Z]*$/",$address)){ // regular expression for name to contain only alphabets
-          $addr_err="Only letters and white spaces allowed";
+          $addr_err="Only letters and white spaces allowed";$no_error = 1;
       }
       $city=remove_whitespaces($_POST["city"]); //first remove whietspaces from name field
       if(!preg_match("/^([A-Za-z]+ )+[A-Za-z]+$|^[A-Za-z]+$/",$city)){ // regular expression for name to contain only alphabets
-          $city_err="Only letters and white spaces allowed";
+          $city_err="Only letters and white spaces allowed";$no_error = 1;
       }
      $zipcode=remove_whitespaces($_POST["zipcode"]);
      if(!preg_match('/^[0-9]{5}([- ]?[0-9]{4})?$/', $zipcode)){
-       $zipcode_err = "not a valid zipcode";
+       $zipcode_err = "not a valid zipcode";$no_error = 1;
      }
      $phone=remove_whitespaces($_POST["phone"]);
      if(!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $phone)) {
-        $phone_err="not a valid phone number";
+        $phone_err="not a valid phone number";$no_error = 1;
       }
 echo $fname . $lname. $address. $city. $zipcode. $phone.$cardnumber. $cardId;
-if($no_error){
-//header("Location: ../html/finalreview.php");die;
-
-}
+     if ($no_error == 0) {
+                if (isset($_SESSION['name'])) {
+                    $conn = mysqli_connect('localhost', 'root', '', 'winestore');
+                    if ($conn->connect_error) {
+                        die("Connection failed!" . $conn->connect_error);
+                    } else {
+                        $username = $_SESSION['name'];
+                        $p="";$subtotal=0; $totalprice =0;
+			$date = date("Y/m/d");
+                         foreach($_SESSION['product-cart'] as $key => $val) { 
+                           if (array_key_exists($val, $_SESSION['cart'])) {
+                           
+                              $p = $p. $val.",";
+                              $subtotal = $_SESSION['cart'][$val]['quantity'] * $_SESSION['cart'][$val]['price'];
+                               $totalprice+=$subtotal;
+                         }} 
+			 $p =substr($p, 0, -1); 
+                         $count = count($_SESSION['cart']);                      
+                         
+                         
+                         $sql ="INSERT INTO `winestore`.`transaction` ( `username`, `productID`, `quantity`, `totalprice`, `date`)  "
+                            . "   VALUES ( '$username', '$p',$count, $totalprice,'$date')";
+		         echo "sql".$sql;
+			if ($conn->query($sql) === TRUE) {
+    				echo "Thank your for your Business!"; 
+				unset($_SESSION['cart']);   unset($_SESSION['product-cart']); 
+			} else {
+    				echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+                        $conn->close();
+                    }
+                } else { //guest user
+			
+                    echo "Thank you for you Business. Come Again!";
+		    unset($_SESSION['cart']);   unset($_SESSION['product-cart']); 
+                }
+            }
 
 }//if
 function remove_whitespaces($data){
