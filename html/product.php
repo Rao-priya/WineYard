@@ -18,14 +18,10 @@
 
 <?php
 
-if(isset($_GET['pID'])){
-//clean it up
-if(!is_numeric($_GET['pID'])){
+if(isset($_GET['pID']) && is_numeric($_GET['pID'])){
 //Non numeric value entered. Someone tampered with the pid
 $error=true;
-$errormsg=" No product with this ID exist";
-}
-else{
+
 $conn = mysqli_connect('localhost', 'root' ,'',"winestore");
 if($conn->connect_error){
 	die("Connection failed!" .$conn->connect_error);
@@ -123,13 +119,25 @@ else{
             <!-- container -->
 
 <?php
+$var = $type;
+include("relatedProduct.php");
+}
+else{
+  ?>
+<div class="lblNoRecord">
+  <p>No product with this ID exist!!</p>
+</div>
+<?php
 }
     }
     }
-    }
-
-  $var = $type;
-  include("relatedProduct.php");
+    else{
+      ?>
+    <div class="lblNoRecord">
+      <p>No product with this ID exist!!</p>
+    </div>
+    <?php
+}
 ?>
 </div>
 
