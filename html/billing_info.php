@@ -16,7 +16,7 @@
             header("Location: ../html/cart.php");
         }
         ?>
-        <? //php include './header.php'; ?>
+        <? php include './header.php'; ?>
         <br/>
         <?php
         $fname = "";
