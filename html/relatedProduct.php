@@ -20,7 +20,7 @@
     $result = $conn->query($sql);
     //fetch tha data from the database
     ?>
-    <h2>Related Products</h2>
+    <h2>Featured Products</h2>
   <div id="scroller">
      <div class="innerScrollArea">
          <ul>
@@ -31,7 +31,7 @@
              ?>
              <li>
    <a href="./product.php?pID=<?=$prodID?>">
-     <img class="imgID" src="../img/Product/wine<?=$prodID?>.jpg" alt="your wine" width="50px" height="50px">
+     <img class="imgID" src="../img/wine<?=$prodID?>.jpg" alt="your wine" width="50px" height="50px">
    </a>
 
      <a href="#"><span class="productname"><?=$prodName?></span></a>

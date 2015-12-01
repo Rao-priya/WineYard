@@ -7,7 +7,9 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
   </head>
 <body>
+<p id ="top"></p>
 <header>
+ <?php session_start();  ?> 
 <?php include './header.php';?>
 
 </header>
@@ -94,9 +96,9 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
     $pID=$picNumber;
 ?>
     <td>
-
-<a id="details" href="./product.php?pID=<?=$pID?>">
-    <img id="imgID" src="../img/Product/wine<?=$picNumber?>.jpg" alt="your wine">
+    <p>
+<a href="./product.php?pID=<?=$pID?>">
+    <img id="imgID" src="../img/wine<?=$picNumber?>.jpg" alt="your wine">
     <BR>
       <div id="prodDetails">
       <?php
@@ -106,8 +108,9 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
        ?>
      </div>
 </a>
-    <button type="submit" form="form1" value="Submit">Add to Cart</button> <!--Add to Cart Button!!!!!!! Currently does not do anything  -->
-
+   <a href="country_wine.php?page=country_wine&action=add&id=<?php echo $pID ?>">
+<button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
+    </p>
   </td>
 
 
@@ -172,6 +175,10 @@ else
 </div>
 
 </div>
+<div>
+<a href="#top" >
+<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1220px; position:relative;"/> </a>
+</div>
 <script>
 
 function updateprods(opts){
@@ -220,7 +227,43 @@ return opts;
 }
 
 </script>
+ <?php
+        if (isset($_GET['action']) && $_GET['action'] == "add") {
+            
+            //session_start();
+            $id = intval($_GET['id']);
 
+            if (isset($_SESSION['cart'][$id])) {
+                $_SESSION['cart'][$id]['quantity'] ++;
+                
+            } else {
+                $sql_s = "SELECT * FROM `products` WHERE `SKU ID` = $id"; 
+                $result_s = $conn->query($sql_s);
+                if ($result_s) {
+
+                    $row_s = $result_s->fetch_assoc();
+                    $_SESSION['cart'][$row_s['SKU ID']] = array(
+                        "quantity" => 1,
+                        "price" => $row_s['PRICE']);
+			if (count($_SESSION['cart'])) {//if set
+                		if (count($_SESSION['cart']) == 1) {
+                   			 $ii = 1;
+                    			$_SESSION['product-cart'][$ii] = $row_s['SKU ID'];
+                		}
+				else{
+             			   $ii = count($_SESSION['product-cart']) + 1;
+
+               			  $_SESSION['product-cart'][$ii] = $row_s['SKU ID'];
+				}
+              		 // echo "after -" . $ii;
+            		}//ifset
+                   
+                }
+
+            }
+        }
+        print_r($_SESSION);
+        ?> 
 <footer>
 <?php include './footer.php';?>
 </footer>

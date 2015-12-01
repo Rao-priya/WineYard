@@ -50,7 +50,7 @@ else{
 
 <div id="main">
               <div id="prodImg">
-                  <img id="imgID" src="../img/Product/wine<?=$prodID?>.jpg" alt="your wine">
+                  <img id="imgID" src="../img/wine<?=$prodID?>.jpg" alt="your wine">
               </div>
                 <div id="prodInfo">
                 <p id="prodName"><?=$prodName?></p>
@@ -59,13 +59,13 @@ else{
                 <?php
                 if($type=="White")
                 {?>
-                <p id="alcoPercent"><img id="imgType" src="../img/WhiteWineIcon.png" alt="White Wine"/><?=$alcoPercent?>%</p>
+                <p id="alcoPercent"><img id="imgType" src="../img/WhiteWineIcon.png" alt="White Wine"/><?=$alcoPercent?>% &amp; abv</p>
 
                 <?php
               }
                 elseif($type=="Red")
                 {?>
-                <p id="alcoPercent"><img src="../img/RedWineIcon.png" alt="Red Wine"/><?=$alcoPercent?>%</p>
+                <p id="alcoPercent"><img src="../img/RedWineIcon.png" alt="Red Wine"/><?=$alcoPercent?>% &amp; abv</p>
                 <?php
               }
                 ?>
@@ -74,7 +74,7 @@ else{
 
 
 <div id="cartForm">
-            <form method="post" enctype="multipart/form-data" action="testcart.php">
+           <form method="post" enctype="multipart/form-data" action=#> 
               <table>
                 <tr>
                   <td>
@@ -87,11 +87,15 @@ else{
             <label for="qty">Qty: </label></td><td> <input type="text" size="2" name="qty" value="1"/></td></tr>
             <tr>
               <td>
-                  <input name="id" type="hidden" value="<?=$prodID?>">
-            <input type="submit" value="Add To Cart" class="addtocartBtn"></td></tr>
+                  <input name="id" type="hidden" value="<?=$prodID?>">    
+                  <a href="pairing_beef.php?page=pairing_beef&action=add&id=<?php echo $pID ?>">
+                  <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
+                        
+                
+           </td></tr>
 
           </table>
-            </form>
+           </form>
 </div>
 
 
@@ -114,24 +118,10 @@ else{
 
             </div>
             <div id="tab-2" class="tab-content">
-              For Shipping information please refer our <a id="lblShipping" href ="./shipping_Info.php" class="foot_a">Shipping Policies</a> Page.
+
             </div>
             <div id="tab-3" class="tab-content">
-              <form action="thispage.php" method="post" accept-charset="utf-8">
-    <fieldset><legend>Review This Product</legend>
-    <p><label for="rating">Rating</label><input type="radio" name="rating"
-      value="5" /> 5 <input type="radio" name="rating" value="4" /> 4
-      <input type="radio" name="rating" value="3" /> 3 <input type="radio"
-      name="rating" value="2" /> 2 <input type="radio" name="rating" value="1" /> 1</p>
-    <p><label for="review">Review: </label>
-      <br>
-      <textarea name="review" rows="8" cols="40">
-       </textarea></p>
-    <p><input type="submit" value="Submit Review"></p>
-    <input type="hidden" name="product_type" value="actual_product_type" id="product_type">
-    <input type="hidden" name="product_id" value="actual_product_id" id="product_id">
-</fieldset>
-</form>
+  <p id="review"><span class="review">3 comments</span><img id="rvImg" class="img" style="padding-top:10px; height:20px; width:60px;"  src="../img/review-three-half-stars.jpg" /></p>
 </div>
             </div>
             <!-- container -->
