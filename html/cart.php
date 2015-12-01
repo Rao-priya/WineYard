@@ -122,7 +122,7 @@ if (isset($_SESSION['cart'])) {
 <?php } else {
     ?>
                         <p> Shopping cart is empty.</p>
-                        <div class="button"><a href= "../html/country_wine.php" class="abutton"> Continue Shopping </a></div>
+                        <div class="button"><a href= "../html/national_wine.php" class="abutton"> Continue Shopping </a></div>
                         </br>
 
                     <?php } ?>

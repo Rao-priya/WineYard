@@ -77,43 +77,43 @@ echo "Welcome ".$_SESSION['name'];
 
             <nav id="topNav">
                 <ul>
-                    <li><a href="#" title="Nav Link 1">Wines</a>
+                    <li><a href="#" title="Nav Link 1" class="a_color">Wines</a>
                         <ul>
 
-                            <li><a href="./national_wine.php" title="National Wine" class="a_color">Country Wine</a></li>
+                            <li><a href="./national_wine.php" title="National Wine" class="a_color">National Wine</a></li>
                             <li><a href="./imported_wine.php" title="Imported Wine" class="a_color">Imported Wine</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="Nav Link 1">Pairings</a>
+                        <a href="#" title="Nav Link 1" class="a_color">Pairings</a>
                         <ul>
-                            <li><a href="./pairing_beef.php" title="Beef">Beef</a></li>
-                            <li><a href="./pairing_chicken.php" title="Chicken">Chicken</a></li>
-                            <li><a href="./pairing_pasta.php" title="Pasta">Pasta</a></li>
-                            <li class="last"><a href="./pairing_fish.php" title="Fish">Fish</a></li>
+                            <li><a href="./pairing_beef.php" title="Beef" class="a_color">Beef</a></li>
+                            <li><a href="./pairing_chicken.php" title="Chicken" class="a_color">Chicken</a></li>
+                            <li><a href="./pairing_pasta.php" title="Pasta" class="a_color">Pasta</a></li>
+                            <li class="last"><a href="./pairing_fish.php" title="Fish" class="a_color">Fish</a></li>
 
 
                         </ul>
                     </li>
-                    <li><a href="#" title="Nav Link 1">Events</a>
+                    <li><a href="#" title="Nav Link 1" class="a_color">Events</a>
                         <ul>
-                            <li><a href="./events.php" title="Sub Nav Link 1">Wine Events</a></li>
-                            <li><a href="./meetings.php" title="Sub Nav Link 1">Wine Club Meetings</a></li>
+                            <li><a href="./events.php" title="Wine events" class="a_color">Wine Events</a></li>
+                            <li><a href="./meetings.php" title="meetings" class="a_color">Wine Club Meetings</a></li>
 
                         </ul>
                     </li>
-                    <li><a href="#" title="Nav Link 1">Membership</a>
+                    <li><a href="#" title="Nav Link 1" class="a_color">Membership</a>
                         <ul>
-                            <li><a href="#" title="Sub Nav Link 1">Benefits</a></li>
-                            <li><a href="#" title="Sub Nav Link 1">Register Form</a></li>
+                            <li><a href="#" title="benefits" class="a_color">Benefits</a></li>
+                            <li><a href="#" title="Register" class="a_color">Register Form</a></li>
 
                         </ul>
                     </li>
 
-                    <li><a href="#" title="Nav Link 1">Contact Us</a>
+                    <li><a href="#" title="Nav Link 1" class="a_color">Contact Us</a>
                        <ul>
-                            <li><a href="#" title="Sub Nav Link 1">Contact Form</a></li>
-                            <li><a href="#" title="Sub Nav Link 1">About Us</a></li>
+                            <li><a href="#" title="Sub Nav Link 1" class="a_color">Contact Form</a></li>
+                            <li><a href="#" title="Sub Nav Link 1" class="a_color">About Us</a></li>
 
                         </ul>
                     </li>

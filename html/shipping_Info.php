@@ -12,7 +12,7 @@ and open the template in the editor.
         <style>
             .section{
                 width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
-                font-family: cursive; position:inherit;
+                font-family:Tahoma, Geneva, sans-serif; position:inherit;
             }
 	   h2{ color: darkred;  }
 	  span{ font-weight: bold;}
@@ -49,10 +49,7 @@ Please start shopping on Wine.com by first using the state drop-down menu to sel
 <p> <span>PRICES AND SELECTION MAY CHANGE BASED ON WHERE ITS DELIVERED!</span>
 Please start shopping on Wine.com by first using the state drop-down menu to select the state where you want your items delivered.  Once you choose your desired delivery state, our site will adjust the selection we offer to ensure you are only shown items that we can legally ship to that state.</p>
 
-<div>
-<a href="#top" >
-<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1220px; position:relative;"/> </a>
-</div>	
+	
 </div>
 	<br>
         <footer>

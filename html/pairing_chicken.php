@@ -100,7 +100,7 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
 ?>
     <td>
 
-<a href="./product.php?pID=<?=$pID?>">
+<a href="./product.php?pID=<?=$pID?>" id = "details">
     <img id="imgID" src="../img/Product/wine<?=$picNumber?>.jpg" alt="your wine">
     <BR>
       <div id="prodDetails">
