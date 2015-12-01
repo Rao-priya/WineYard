@@ -1,27 +1,27 @@
 #main{
   width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%; margin-bottom:5%; padding-bottom:50px;
-  font-family:Tahoma, Geneva, sans-serif;// cursive;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
-p {
-    text-align: center;
-padding-left: 50px;
-}
+
 
 button{
   color: white;
  background-color: firebrick;
   border-radius: 4px;
-  margin-left:1px;
+  margin-left:30px;
 }
 
 #filter{
-  padding-left:10px;
+    padding-left:10px;
       background-color: darkred;
       width: 200px;
       height: 400px;
       text-align: left;
       float: left;
+      //position: fixed;
+      color:white;
+      font-size:15px;
 }
 
 hr {
@@ -41,13 +41,14 @@ text-align: center;
 #prodDetails{
   width: 250px;
   text-align: center;
+  padding-left: 30px;
 }
 
 #imgID{
   width:200px;
   height:200px;
   margin-left:0px;
-  padding-left:0px;
+  padding-left:25px;
 }
 
 #tlbData{
@@ -55,22 +56,27 @@ width:auto;
 text-align: center;
 }
 
+#tlbData td{
+padding-bottom: 30px;
+}
+
+
 /* unvisited link */
-a:link, a:visited {
+#details:link,:visited {
     text-decoration: none;
     color: black;
     text-align: center;
 }
 /* mouse over link */
-a:hover {
+#details:hover {
   text-decoration: none;
   color: black;
 }
 
 /* selected link */
-a:active {
+#details:active {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 footer {
