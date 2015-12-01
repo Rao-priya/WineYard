@@ -89,7 +89,7 @@ else{
               <td>
                   <input name="id" type="hidden" value="<?=$prodID?>">
                   <a href="pairing_beef.php?page=pairing_beef&action=add&id=<?php echo $pID ?>">
-                  <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
+                  <button type="submit" class="addtocartBtn" form="form1" value="Submit">Add to Cart</button> </a>
 
 
            </td></tr>
