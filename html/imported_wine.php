@@ -5,11 +5,12 @@
     <title>Wine Chart</title>
     <link rel="stylesheet" type="text/css" href="../css/winestyle.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+
   </head>
 <body>
 <p id ="top"></p>
 <header>
-<?php session_start();  ?> 
+<?php session_start();  ?>
 <?php include './header.php';?>
 
 </header>
@@ -96,9 +97,8 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
     $pID=$picNumber;
 ?>
     <td>
-    <p>
-<a href="./product.php?pID=<?=$pID?>">
-    <img id="imgID" src="../img/wine<?=$picNumber?>.jpg" alt="your wine">
+      <a id="details" href="./product.php?pID=<?=$pID?>">
+          <img id="imgID" src="../img/Product/wine<?=$picNumber?>.jpg" alt="your wine">
     <BR>
       <div id="prodDetails">
       <?php
@@ -110,7 +110,7 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
 </a>
    <a href="imported_wine.php?page=imported_wine&action=add&id=<?php echo $pID ?>">
 <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
-    </p>
+
   </td>
 
 
@@ -178,66 +178,20 @@ else
 <a href="#top" >
 <img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1220px; position:relative;"/> </a>
 </div>
-<script>
 
-function updateprods(opts){
-  $.ajax({
-  type: "POST",
-  url: "imported_wine.php",
-  dataType : 'html',
-  cache: false,
-  data: {filterOpts: opts},
-  success: function(data){
-       $("html").html(data);
-  }
-  });
-  }
 
-var $checkboxes = $("input:checkbox");
-$checkboxes.on("change", function(){
-var opts = getprodFilterOptions();
 
-updateprods(opts);
-});
-
-var $radioButton = $("input:radio");          // check radio button is clicked
-$radioButton.on("change", function(){
-var opts = getprodFilterOptions();    // update the database
-
-updateprods(opts);
-});
-
-function getprodFilterOptions(){
-var opts = [];
-//var checkboxValues = {};
-$checkboxes.each(function(){
-if(this.checked){
-opts.push(this.name);
-
-}
-});
-
-$radioButton.each(function(){
-if(this.checked){
-opts.push(this.value);
-}
-});
-return opts;
-}
-
-</script>
-	
  <?php
         if (isset($_GET['action']) && $_GET['action'] == "add") {
-            
+
             //session_start();
             $id = intval($_GET['id']);
 
             if (isset($_SESSION['cart'][$id])) {
                 $_SESSION['cart'][$id]['quantity'] ++;
-                
+
             } else {
-                $sql_s = "SELECT * FROM `products` WHERE `SKU ID` = $id"; 
+                $sql_s = "SELECT * FROM `products` WHERE `SKU ID` = $id";
                 $result_s = $conn->query($sql_s);
                 if ($result_s) {
 
@@ -257,12 +211,14 @@ return opts;
 		     }
                       // echo "after -" . $ii;
                    }
-                   
+
                 }
             }
         }
         print_r($_SESSION);
         ?>
+
+        <script src="../js/filter_imported.js"></script>
 <footer>
 <?php include './footer.php';?>
 </footer>
