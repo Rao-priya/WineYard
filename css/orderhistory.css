@@ -1,0 +1,46 @@
+
+           .section{
+               width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
+               font-family:Tahoma, Geneva, sans-serif; position:inherit;
+           }
+    table {
+           width: 700px;
+           background-color:#B8B894;
+           border:1px solid black;
+           border-collapse: collapse;
+       }
+
+            table th {
+               padding: 10px;
+               background-color: darkred;
+               color: #fff;
+               text-align: center;
+               border:1px solid black;
+               border-collapse: collapse;
+           }
+
+            table td {
+               padding: 5px;
+               border:1px solid black;
+               border-collapse: collapse;
+           }
+
+
+
+
+
+#wrapper
+{
+   width: 90%;//600px;
+ //  background: lime;
+   box-sizing: border-box;
+}
+
+.slide-container
+{
+  // text-align: left;
+   width: 45%;
+   display: inline-block;
+  // margin: 0px -4px;
+padding-left:20px;
+}

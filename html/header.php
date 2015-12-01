@@ -45,7 +45,7 @@ and open the template in the editor.
                         xhttp.send();
                     }
 		  function cartItem_Count(x) {
-			document.getElementById("x").innerHTML = <?php echo count($_SESSION['cart']); ?>
+			document.getElementById("x").innerHTML = <?php if($_SESSION['cart']) { echo  count($_SESSION['cart']);} ?>;
 		   }
 
                 </script>

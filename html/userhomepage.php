@@ -47,7 +47,8 @@ else{
      
     // echo '<h3>'.'Welcome: '. $_SESSION['name'].'</h3>';
     // echo  '<p><a href =./logout.php>Signout</a></p>';
-    
+     $var = $row["username"];
+     
    }
    else{
        echo "Your details didnot match";
@@ -64,7 +65,10 @@ else{
 <img src="../img/person.png" alt="account" width=50 height=50 />
             </span>Welcome <?php echo $_SESSION['name']?></h3>
             <h3><a href =./logout.php>Sign out</a></h3>
-<?php } ?>   
+
+<?php 
+include("orderdetail.php");
+} ?>   
          
 <script>
 

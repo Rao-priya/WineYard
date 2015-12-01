@@ -1,0 +1,29 @@
+.section{
+   width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
+   font-family: Tahoma, Geneva, sans-serif;// cursive; 
+position:inherit;
+}
+ #shipping{
+
+width:500px;
+ height:710px;    
+    padding: 10px;
+    border: 1px solid black;
+margin-left:10%;
+ background-color:#B8B894;
+}
+#card_info{
+display:inline-block;
+width:400px;
+}
+.heading{
+font-size:17px;
+font-weight:bold;
+}
+input{
+padding:5px;
+margin: 15px 0 0 0;
+}
+select{
+//float: left; margin: 0 50px 0 0;
+}

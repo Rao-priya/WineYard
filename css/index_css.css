@@ -11,7 +11,8 @@ and open the template in the editor.
 
 .section{
    width: 78%; height:auto;  margin-top: 10%;  margin-left:6%; 
-text-justify:auto;   font-family: cursive; position:inherit;
+text-justify:auto;   font-family:Tahoma, Geneva, sans-serif; font-size:19px; //font-family: cursive; 
+position:inherit;
 }
 
 .center_img{

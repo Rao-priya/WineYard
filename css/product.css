@@ -1,6 +1,6 @@
 #main{
   width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%; margin-bottom:5%; padding-bottom:10px;
-  font-family: cursive;
+  font-family:Tahoma, Geneva, sans-serif;// cursive;
 }
 
 #prodImg{
