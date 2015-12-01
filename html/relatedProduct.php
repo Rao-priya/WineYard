@@ -31,7 +31,7 @@
              ?>
              <li>
    <a href="./product.php?pID=<?=$prodID?>">
-     <img class="imgID" src="../img/wine<?=$prodID?>.jpg" alt="your wine" width="50px" height="50px">
+     <img class="imgID" src="../img/Product/wine<?=$prodID?>.jpg" alt="your wine">
    </a>
 
      <a href="#"><span class="productname"><?=$prodName?></span></a>

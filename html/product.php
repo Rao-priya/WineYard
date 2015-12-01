@@ -50,7 +50,7 @@ else{
 
 <div id="main">
               <div id="prodImg">
-                  <img id="imgID" src="../img/wine<?=$prodID?>.jpg" alt="your wine">
+                  <img id="imgID" src="../img/Product/wine<?=$prodID?>.jpg" alt="your wine">
               </div>
                 <div id="prodInfo">
                 <p id="prodName"><?=$prodName?></p>
@@ -74,7 +74,7 @@ else{
 
 
 <div id="cartForm">
-           <form method="post" enctype="multipart/form-data" action=#> 
+           <form method="post" enctype="multipart/form-data" action=#>
               <table>
                 <tr>
                   <td>
@@ -87,11 +87,11 @@ else{
             <label for="qty">Qty: </label></td><td> <input type="text" size="2" name="qty" value="1"/></td></tr>
             <tr>
               <td>
-                  <input name="id" type="hidden" value="<?=$prodID?>">    
+                  <input name="id" type="hidden" value="<?=$prodID?>">
                   <a href="pairing_beef.php?page=pairing_beef&action=add&id=<?php echo $pID ?>">
                   <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
-                        
-                
+
+
            </td></tr>
 
           </table>
@@ -104,7 +104,6 @@ else{
             <ul class="tabs">
             <li class="tab-link current" data-tab="tab-1">About the Wine</li>
             <li class="tab-link" data-tab="tab-2">Shipping</li>
-            <li class="tab-link" data-tab="tab-3">Review</li>
             </ul>
 
             <div id="tab-1" class="tab-content current">
@@ -118,11 +117,8 @@ else{
 
             </div>
             <div id="tab-2" class="tab-content">
-
+              For Shipping information please refer our <a id="lblShipping" href ="./shipping_Info.php" class="foot_a">Shipping Policies</a> Page.
             </div>
-            <div id="tab-3" class="tab-content">
-  <p id="review"><span class="review">3 comments</span><img id="rvImg" class="img" style="padding-top:10px; height:20px; width:60px;"  src="../img/review-three-half-stars.jpg" /></p>
-</div>
             </div>
             <!-- container -->
 

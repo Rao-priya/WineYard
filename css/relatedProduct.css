@@ -5,6 +5,7 @@
     width: 1000px;
     height: 220px;
     margin: 0 auto;
+
 }
 #scroller .innerScrollArea {
 
@@ -40,6 +41,10 @@
   font-size:12px;
   text-align: center;
 }
+#scroller .innerScrollArea #prodLink{
+  text-decoration: none;
+  outline: none;
+}
 
 #scroller .innerScrollArea .cartBtn {
     background-color: darkred;
@@ -47,7 +52,6 @@
     text-align: center;
     font-weight: bold;
     font-size:12px;
-    border-radius: 7px;
     height: 20px;
     width: 100px;
     margin-left: 0px;
