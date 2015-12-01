@@ -9,7 +9,7 @@
 <body>
 <p id ="top"></p>
 <header>
- <?php session_start();  ?> 
+ <?php session_start();  ?>
 <?php include './header.php';?>
 
 </header>
@@ -108,7 +108,7 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
        ?>
      </div>
 </a>
-   <a href="country_wine.php?page=country_wine&action=add&id=<?php echo $pID ?>">
+   <a href="national_wine.php?page=national_wine&action=add&id=<?php echo $pID ?>">
 <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
     </p>
   </td>
@@ -229,15 +229,15 @@ return opts;
 </script>
  <?php
         if (isset($_GET['action']) && $_GET['action'] == "add") {
-            
+
             //session_start();
             $id = intval($_GET['id']);
 
             if (isset($_SESSION['cart'][$id])) {
                 $_SESSION['cart'][$id]['quantity'] ++;
-                
+
             } else {
-                $sql_s = "SELECT * FROM `products` WHERE `SKU ID` = $id"; 
+                $sql_s = "SELECT * FROM `products` WHERE `SKU ID` = $id";
                 $result_s = $conn->query($sql_s);
                 if ($result_s) {
 
@@ -257,13 +257,13 @@ return opts;
 				}
               		 // echo "after -" . $ii;
             		}//ifset
-                   
+
                 }
 
             }
         }
         print_r($_SESSION);
-        ?> 
+        ?>
 <footer>
 <?php include './footer.php';?>
 </footer>
