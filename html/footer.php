@@ -38,10 +38,10 @@ and open the template in the editor.
         <div id="footer">             
             <div>               
                 <p class='p01'>
-                    <a href ="#home" class="foot_a">FAQ's</a> |
+                   <a href ="./FAQ.php" class="foot_a">FAQ's</a> |
                     <a href ="./shipping_Info.php" class="foot_a">Shipping Policies</a> |
-                    <a href ="#home" class="foot_a">Copyrights</a> |
-                    <a href ="#home" class="foot_a"> Privacy Policy</a> |
+                    <a href ="./copyrights.php" class="foot_a">Copyrights</a> |
+                    <a href ="./privacypolicy.php" class="foot_a"> Privacy Policy</a> |
                     <a href ="./contact.php" class="foot_a">Contact Us</a></p>
 <hr id="line2">
                 
