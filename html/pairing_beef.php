@@ -145,11 +145,16 @@
                         ?>
                     </table>
                     <?php
-                } else {
-                    echo("No Records Found");
-                }
-                ?>
-
+                       }
+                    else
+                    {
+                      ?>
+                      <div id=lblNoRecord>
+                        <p>No Records Found<p>
+                      </div>
+                      <?php
+                    }
+                      ?>
             </div>
 
         </div>

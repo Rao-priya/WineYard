@@ -167,7 +167,11 @@ for($i = 1; $i<=$size ; $i++){//Cycles through all elements
    }
 else
 {
-  echo("No Records Found");
+  ?>
+  <div id=lblNoRecord>
+    <p>No Records Found<p>
+  </div>
+  <?php
 }
   ?>
 

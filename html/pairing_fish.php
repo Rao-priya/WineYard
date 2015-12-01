@@ -110,7 +110,7 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
 </a>
     <a href="pairing_fish.php?page=pairing_fish&action=add&id=<?php echo $pID ?>">
 <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
-    
+
   </td>
 
 
@@ -168,7 +168,11 @@ for($i = 1; $i<=$size ; $i++){//Cycles through all elements
    }
 else
 {
-  echo("No Records Found");
+  ?>
+  <div id=lblNoRecord>
+    <p>No Records Found<p>
+  </div>
+  <?php
 }
   ?>
 
