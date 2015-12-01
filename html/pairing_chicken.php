@@ -99,9 +99,9 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
     $pID=$picNumber;
 ?>
     <td>
-    <p>
+
 <a href="./product.php?pID=<?=$pID?>">
-    <img id="imgID" src="../img/wine<?=$picNumber?>.jpg" alt="your wine">
+    <img id="imgID" src="../img/Product/wine<?=$picNumber?>.jpg" alt="your wine">
     <BR>
       <div id="prodDetails">
       <?php
@@ -113,7 +113,7 @@ function newCell($selections,$count,$ID) {//Added ID Parameter to get pictures
 </a>
     <a href="pairing_chicken.php?page=pairing_chicken&action=add&id=<?php echo $pID ?>">
 <button type="submit" form="form1" value="Submit">Add to Cart</button> </a>
-    </p>
+  
   </td>
 
 
