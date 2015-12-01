@@ -1,0 +1,15 @@
+.eventimage {
+   width:400px; 
+   height:200px; 
+   padding-top:15px;
+   float:left;
+   padding-bottom: 25px;
+}
+
+.description {
+   width:55%; 
+   float: left;
+   padding-left: 100px;
+   padding-top:15px;
+   padding-bottom: 20px;
+}

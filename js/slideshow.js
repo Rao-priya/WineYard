@@ -1,5 +1,5 @@
 (function(document){
-  
+  debugger;
     var counter = 0, // to keep track of current slide
     $items = document.querySelectorAll('.slideshowbanner figure'), // a collection of all of the slides, caching for performance
     numItems = $items.length; // total number of slides

@@ -24,7 +24,7 @@ and open the template in the editor.
 .cart_image { position: relative;  width: 100%;  display: inline; }
 #sugges { visibility:hidden;}
 #captionheader{
-    position: absolute; padding-top: 5.5%;  margin-left:-20px;font-style: italic;  font-weight: bold; font-size: 18px;
+    position: absolute; padding-top: 5.5%;  margin-left:-0.5px;font-style: italic;  font-weight: bold; font-size: 18px;
 }
 
 #searchWrapper{

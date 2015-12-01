@@ -15,10 +15,10 @@ and open the template in the editor.
 
         <div id="header">
             <div>
-                <figure>
-                    <a href = "../html/index.php"><img src="../img/wineyard_LOGO.png" alt="logo" class="logoclass" /></a>
+                
+                    <a href = "../html/index.php"><img src="../img/wineyard_LOGO_1.png" alt="logo" class="logoclass" /></a>
                     <figcaption id="captionheader">quit whining start drinking</figcaption>
-                </figure>
+                
             </div>
             <noscript> Your browser does not support javascript. </noscript>
             <div id='searchWrapper'>
@@ -97,8 +97,8 @@ echo "Welcome ".$_SESSION['name'];
                     </li>
                     <li><a href="#" title="Nav Link 1">Events</a>
                         <ul>
-                            <li><a href="#" title="Sub Nav Link 1">Wine Events</a></li>
-                            <li><a href="#" title="Sub Nav Link 1">Wine Club Meetings</a></li>
+                            <li><a href="./events.php" title="Sub Nav Link 1">Wine Events</a></li>
+                            <li><a href="./meetings.php" title="Sub Nav Link 1">Wine Club Meetings</a></li>
 
                         </ul>
                     </li>
