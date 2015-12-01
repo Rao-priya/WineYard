@@ -106,8 +106,7 @@
                 $pattern = "/^([4]{1})([0-9]{12,15})$/"; //Visa
                 if (preg_match($pattern, $cardnumber)) {
                     $verified = true;
-	echo "ji";
-                } else {
+	         } else {
                     $verified = false;
                 }
             }
@@ -151,20 +150,25 @@
                                 . "   VALUES ( '$username', '$p',$count, $totalprice,'$date')";
                         echo "sql" . $sql;
                         if ($conn->query($sql) === TRUE) {
-			   $succes ="Thank your for your Business!";
-                            echo "Thank your for your Business!";
+			 //  $succes ="Thank your for your Business!";
+                          //  echo "Thank your for your Business!";
+                           
+	die;
                             unset($_SESSION['cart']);
                             unset($_SESSION['product-cart']);
+                              header("location:./thankyou.php?q=1");
                         } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                         }
                         $conn->close();
                     }
                 } else { //guest user
- 		    $succes ="Thank your for your Business!";
-                    echo "Thank you for you Business. Come Again!";
+ 		  //  $succes ="Thank your for your Business!";
+                   // echo "Thank you for you Business. Come Again!";
+                     
                     unset($_SESSION['cart']);
                     unset($_SESSION['product-cart']);
+                    header("location:./thankyou.php?q=1");
                 }
             }
         }//if
@@ -177,20 +181,7 @@
         }
         ?>
         <div class="section">
- 
- <?php if ($succes) {
-                ?>
-                <script>
-debugger;
-                    $("#result").show();
-                    $("#shipping").hide();
-                </script>
-              
-                <?php }
-else {?> 
-                <script> $("#result").hide(); </script> <?php }
-            ?>
-        <h2 id = "result"><?php echo $succes; ?></h2> 
+
             <div id="shipping" >
 
                 <p class ="heading">Shipping Information </p>

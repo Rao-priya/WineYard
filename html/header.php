@@ -44,9 +44,9 @@ and open the template in the editor.
                         xhttp.open("GET", "../html/search.php?q=" + str, true);
                         xhttp.send();
                     }
-		  function cartItem_Count(x) {
-			document.getElementById("x").innerHTML = <?php if($_SESSION['cart']) { echo  count($_SESSION['cart']);} ?>;
-		   }
+		 /* function cartItem_Count(x) {
+			document.getElementById("x").innerHTML = <?php //if($_SESSION['cart']) { echo  count($_SESSION['cart']);} ?>;
+		   }*/
 
                 </script>
 
