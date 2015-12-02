@@ -1,35 +1,33 @@
- 
+
 
             .section{
-                width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
-                font-family:Tahoma, Geneva, sans-serif;// cursive; 
-       position:inherit; font-size:19px;
+                width: 100%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
+                font-family:Tahoma, Geneva, sans-serif;// cursive;       position:inherit; font-size:19px;
             }
-     table { 
-            width: 480px; 
-        } 
-          
-             table th { 
-                padding: 10px; 
-                background-color: darkred; 
-                color: #fff; 
-                text-align: left; 
-            } 
-              
-             table td { 
-                padding: 5px; 
-            } 
-              
-             table tr { 
-                background-color: #B8B894; 
+     table {
+           width: 480px;
+       }
+
+  table th {
+               padding: 10px;
+               background-color: darkred;
+               color: #fff;
+                ext-align: left;
             }
 
-   
+            tabe         padding: 5px;
+           }
+
+             tabl tr {
+          d-color: #B8B894;
+           }
+
+
 
 #wrapper
 {
-    width: 90%;//600px;
-  //  background: lime;
+    width: 100%;//00px;
+  //  backgrd: lime;
     box-sizing: border-box;
 }
 
@@ -55,10 +53,10 @@ padding-left: 50px;
 }
 .button {
     width: 200px;
-    height:50px;    
+    height:50px;
     padding: 5px;
     border: 1px solid red;
-background-color:darkred;
+backgrouolor:darkred;
     box-sizing: border-box;
 font-size:19px;
 
@@ -70,4 +68,16 @@ text-decoration:none;
 font-weight:bold;
 color: white;
 
+}
+
+.updateBtn {
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size:14px;
+    float: left;
+    border-radius: 7px;
+    height: 30px;
+    width: 100px;
 }

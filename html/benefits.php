@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <title>Events</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/meetings.css"  rel="stylesheet">
         <style>
             .section{
@@ -23,16 +23,16 @@ and open the template in the editor.
 
 
     </head>
-    
+
     <body>
-	
+
            <?php include './header.php';?>
-	
+
         </br>
         <div class="section">
 <h1>WineYard Club<h2>
 <h2> Best choice for wine lovers </h2>
-	<p>WineYard club is for people who loves wine. Being a member gives you advantages such free admission in our events. Every month our members are going to have a wine selected and shipped. The wines are selected carefully by our team. So, you can be sure that you are going to have always the best wine. Fill in our form and start getting perks!  
+	<p>WineYard club is for people who loves wine. Being a member gives you advantages such free admission in our events. Every month our members are going to have a wine selected and shipped. The wines are selected carefully by our team. So, you can be sure that you are going to have always the best wine. Fill in our form and start getting perks!
     </p>
     </br>
     <hr>
@@ -51,8 +51,8 @@ and open the template in the editor.
 
 <div>
 <a href="#top" >
-<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1220px; position:relative;"/> </a>
-</div>	
+<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:950px; position:relative;"/> </a>
+</div>
 </div>
 	<br>
         <footer>

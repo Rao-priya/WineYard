@@ -52,7 +52,7 @@
                             session_destroy();
                         }
                     }
-                    ?> 
+                    ?>
 
 
 <?php
@@ -60,17 +60,17 @@ if (isset($_SESSION['cart'])) {
     ?>
 
 
-                        <h1>View cart</h1> 
-                        <form method="post" > 
+                        <h1>View cart</h1>
+                        <form method="post" >
 
-                            <table > 
+                            <table >
 
-                                <tr> 
-                                    <th>Name</th> 
-                                    <th>Quantity</th> 
-                                    <th>Price</th> 
-                                    <th>Items Price</th> 
-                                </tr> 
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Items Price</th>
+                                </tr>
     <?php
     $conn = mysqli_connect('localhost', 'root', '', 'winestore');
     if ($conn->connect_error) {
@@ -93,31 +93,31 @@ if (isset($_SESSION['cart'])) {
 
                 $subtotal = $_SESSION['cart'][$row['SKU ID']]['quantity'] * $row['PRICE'];
                 $totalprice+=$subtotal;
-                ?> 
-                                            <tr> 
-                                                <td><?php echo $row['SKU DESC'] ?></td> 
-                                                <td><input type="text" name="quantity[<?php echo $row['SKU ID'] ?>]" size="5" value="<?php echo $_SESSION['cart'][$row['SKU ID']]['quantity'] ?>" /></td> 
-                                                <td><?php echo $row['PRICE'] ?>$</td> 
-                                                <td><?php echo $_SESSION['cart'][$row['SKU ID']]['quantity'] * $row['PRICE'] ?>$</td> 
-                                            </tr> 
+                ?>
+                                            <tr>
+                                                <td><?php echo $row['SKU DESC'] ?></td>
+                                                <td><input type="text" name="quantity[<?php echo $row['SKU ID'] ?>]" size="5" value="<?php echo $_SESSION['cart'][$row['SKU ID']]['quantity'] ?>" /></td>
+                                                <td><?php echo $row['PRICE'] ?>$</td>
+                                                <td><?php echo $_SESSION['cart'][$row['SKU ID']]['quantity'] * $row['PRICE'] ?>$</td>
+                                            </tr>
                                             <?php
                                         }
                                     }
                                 }
-                                ?> 
-                                <tr> 
+                                ?>
+                                <tr>
                                     <td colspan="4" style = "text-align:right">Tax: <?php echo 0.12 * $totalprice;
-                                $totalprice = $totalprice + 0.12 * $totalprice; ?></td> 
-                                </tr> 
-                                <tr> 
-                                    <td colspan="4" style = "text-align:right">Total Price: <?php echo $totalprice ?></td> 
-                                </tr> 
+                                $totalprice = $totalprice + 0.12 * $totalprice; ?></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style = "text-align:right">Total Price: <?php echo $totalprice ?></td>
+                                </tr>
 
 
-                            </table> 
-                            <br /> 
-                            <button type="submit" name="submit">Update Cart</button> 
-                        </form> 
+                            </table>
+                            <br />
+                            <button class="updateBtn" type="submit" name="submit">Update Cart</button> 
+                        </form>
                         <p>To remove an item set its quantity to 0. </p>
 <?php } else {
     ?>
@@ -144,13 +144,13 @@ debugger;
                         </br>
 
                         <h3> New Users </h3>
-                        <div class="button"> <a href = "#" class="abutton"> Register Here </a> </div> 
+                        <div class="button"> <a href = "#" class="abutton"> Register Here </a> </div>
                         <br>
 
                         <h3>Check out as </h3>
                         <div class="button" ><a href = "../html/billing_info.php" class="abutton" > Guest user </a></div>
-                        <br>                     
-                       
+                        <br>
+
                     </div>
                     	 <h3 style="display: none" id="bill">Proceed to </h3>
                         <div class="button" style="display: none" id="billing"><a href= "../html/billing_info.php" class="abutton"  >  Billing Information </a></div>
@@ -159,7 +159,7 @@ debugger;
 <?php } ?>
             </div>
             <p>&nbsp;<p>
-                
+
         </div>
 <?php
 if ((isset($_SESSION['cart'])) && isset($_SESSION['name'])) {
@@ -170,11 +170,11 @@ if ((isset($_SESSION['cart'])) && isset($_SESSION['name'])) {
                 $("#billing").show();
 		$("#bill").show();
             </script>
-            
-            
-                       
+
+
+
     <?php }
-    
+
 ?>
         <footer >
 <?php include './footer.php'; ?>
