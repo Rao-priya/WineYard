@@ -116,8 +116,9 @@ if (isset($_SESSION['cart'])) {
 
                             </table>
                             <br />
-                            <button class="updateBtn" type="submit" name="submit">Update Cart</button> 
+                            <button class="updateBtn" type="submit" name="submit">Update Cart</button>
                         </form>
+                        <br>
                         <p>To remove an item set its quantity to 0. </p>
 <?php } else {
     ?>

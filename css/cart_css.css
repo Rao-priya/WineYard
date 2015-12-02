@@ -12,14 +12,15 @@
                padding: 10px;
                background-color: darkred;
                color: #fff;
-                ext-align: left;
+                text-align: left;
             }
 
-            tabe         padding: 5px;
+            table td{
+              padding: 5px;
            }
 
-             tabl tr {
-          d-color: #B8B894;
+             table tr {
+          background-color: #B8B894;
            }
 
 
@@ -56,7 +57,7 @@ padding-left: 50px;
     height:50px;
     padding: 5px;
     border: 1px solid red;
-backgrouolor:darkred;
+background-color:darkred;
     box-sizing: border-box;
 font-size:19px;
 
