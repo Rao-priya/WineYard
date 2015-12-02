@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <title>Events</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/events.css"  rel="stylesheet">
         <style>
             .section{
@@ -21,11 +21,11 @@ and open the template in the editor.
         </style>
          <link href="../css/login_css.css"  rel="stylesheet">
     </head>
-    
+
     <body>
-	
+
            <?php include './header.php';?>
-	
+
         </br>
         <div class="section">
 <h1>Events<h2>
@@ -72,8 +72,8 @@ South San Francisco, CA 94080</p>
 
 <div>
 <a href="#top" >
-<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:1220px; position:relative;"/> </a>
-</div>	
+<img src="../img/top1.png" alt="back to top" width="80" height="80" style="margin-left:950px; position:relative;"/> </a>
+</div>
 </div>
 	<br>
         <footer>
