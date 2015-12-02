@@ -2,18 +2,18 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/login_css.css"  rel="stylesheet">
-<style> 
-	
+<style>
+
 .section{
    width: 80%; height:auto;  margin-top: 10%;  margin-left: 5.2%;
    font-family: cursive; position:inherit;
 }
- 
+
    </style>
     </head>
-    <body>       
+    <body>
   <?php session_start(); ?>
          <?php include './header.php';?>
 </br>
@@ -23,15 +23,14 @@
                     <legend> User Login</legend>
                     <label class="heading" for="name">UserName: </label>
                     <input type="text" name="name" id="name" required /></br>
-                    
+
                      <label class="heading" for="pwd">Password: </label>
-                    <input type="password" name="pwd" id="pwd" required /></br> 
+                    <input type="password" name="pwd" id="pwd" required /></br>
                     </br>
- 		   <a href="./forgot.php" style="margin-left: 7em;  padding-bottom: 100px" >Forgot password</a>
-                                      </br>
+ 		  
                                       </br>
                     <input type="submit" value="Login" />
-                </fieldset>                   
+                </fieldset>
             </form>
 <br><br>
         </div>
@@ -40,4 +39,3 @@
 </footer>
     </body>
 </html>
-

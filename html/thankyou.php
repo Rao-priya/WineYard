@@ -19,7 +19,8 @@
            if(isset($_REQUEST['q'])){
     ?>
            <h3>Thank you for your business.</h3>
-           <p><a href ="../html/index.php">go back</a></p>
+           <p><a href ="../html/index.php">continue shopping!</a></p>
+		<img src="../img/wine-happiness-delivered.jpg" alt="delivered" width=850 height=550 />
            <?php }
     ?>
      </div>

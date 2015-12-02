@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /* CSS Document */
 .eventimage {
-   width:400px; 
-   height:200px; 
+   width:400px;
+   height:200px;
+   float: left;
    padding-top:15px;
-   float:left;
    padding-bottom: 25px;
+   padding-right: 80px;
 }
 
 .description {
-   width:55%; 
-   float: left;
+   width:55%;
    padding-left: 100px;
    padding-top:15px;
    padding-bottom: 100px;
