@@ -1,0 +1,68 @@
+.fieldset {
+    position:relative;
+    top: 100px;
+    background-color: #B8B894; margin-top: 100px; margin-left: auto; margin-right: auto;
+    width: 45em;
+    border: 1px solid black;
+}
+.form {
+   font-family: "Helvetica", sans-serif;
+}
+legend{
+  background-color: darkred;
+  border: 1px solid black;
+  padding: 0.5em;
+  color: wheat;
+  font-weight: bold;
+}
+
+.membershipwebform{
+  vertical-align: bottom;
+}
+td{
+  width: 500px;
+  text-align: left;
+}
+.acc_dropdown{
+  width: 95%;
+}
+.state{
+  width: 30px;
+}
+
+body {
+
+  height: 2000px;
+  background-color: #FFF;
+}
+footer{
+  position: relative;
+  top:200px;
+}
+label{
+  font-weight: bold;
+}
+.space{
+  height: 25;
+}
+
+.acc_button{
+  background-color: darkred;
+  border: 1px solid black;
+  padding: 0.5em;
+  color: wheat;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.alert{
+  color: red;
+  font-weight: bold;
+
+
+}
+.welcome{
+  color: green;
+  font-weight: bold;
+
+
+}
