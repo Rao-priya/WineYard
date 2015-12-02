@@ -4,20 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/billing_css.css"  rel="stylesheet">
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-       
+        <link href="../css/header_css.css"  rel="stylesheet">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>      
 
     </head>
     <body>
-
+ 
         <?php
         session_start();
         if (!isset($_SESSION['cart'])) {
             header("Location: ../html/cart.php");
         }
         ?>
-        <? php include './header.php'; ?>
-        <br/>
+        <?php ob_start();
+        include './header.php';
+        ?>
         <?php
         $fname = "";
         $lname = "";
@@ -39,7 +40,7 @@
         $card_type = "";
         $verified = "";
 	$succes ="";
-	$month_year_err ="";$card_month = "";  $card_year ="";
+	$month_year_err ="";$card_month = "";  $card_year ="";$sql_err="";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fname = remove_whitespaces($_POST["firstname"]); //first remove whietspaces from name field
@@ -113,7 +114,7 @@
 
             if ($verified == false) {
                 //Do something here in case the validation fails
-                echo "Credit card invalid. Please make sure that you entered a valid credit card number ";$no_error = 1;
+                $cardno_err = "Credit card invalid. Please make sure that you entered a valid credit card number ";$no_error = 1;
             } 
             $cardId = remove_whitespaces($_POST["cardId"]);
             if (!preg_match("/^[0-9]{3}$/", $cardId)) {
@@ -121,7 +122,7 @@
                 $no_error = 1;
             }
 		
-           echo $fname . $lname . $address . $city . $zipcode . $phone . $cardnumber . $cardId. $card_type;
+         //  echo $fname . $lname . $address . $city . $zipcode . $phone . $cardnumber . $cardId. $card_type;
 
             if ($no_error == 0) {
                 if (isset($_SESSION['name'])) {
@@ -148,19 +149,20 @@
 
                         $sql = "INSERT INTO `winestore`.`transaction` ( `username`, `productID`, `quantity`, `totalprice`, `date`)  "
                                 . "   VALUES ( '$username', '$p',$count, $totalprice,'$date')";
-                        echo "sql" . $sql;
+                       // echo "sql" . $sql;
                         if ($conn->query($sql) === TRUE) {
-			 //  $succes ="Thank your for your Business!";
+			   $succes ="1";
                           //  echo "Thank your for your Business!";
-                           
-	die;
+                          
                             unset($_SESSION['cart']);
-                            unset($_SESSION['product-cart']);
-                              header("location:./thankyou.php?q=1");
+                            unset($_SESSION['product-cart']);                          
+                        header("location: ./thankyou.php?q=1");die;
+                               
                         } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
+                          //  echo "Error: " . $sql . "<br>" . $conn->error;
+				$sql_err = $conn->error;
                         }
-                        $conn->close();
+                       
                     }
                 } else { //guest user
  		  //  $succes ="Thank your for your Business!";
@@ -168,7 +170,7 @@
                      
                     unset($_SESSION['cart']);
                     unset($_SESSION['product-cart']);
-                    header("location:./thankyou.php?q=1");
+                    header("location: ./thankyou.php?q=1");die;
                 }
             }
         }//if
@@ -275,7 +277,7 @@
                         <option value="Master">Master Card</option>
                         <option value="American">American Express</option>                       
                         <option value="Discover">Discover</option>
-                    </select><br/><br>
+                    </select><br/>
                     <input type="text" name="cardnumber" placeholder="Card Number" required/>    
                     <span class="error">*<?php echo $cardno_err; ?></span><br>
 
@@ -318,7 +320,7 @@
                     <input type="reset" value="Reset">
                     <input type="submit" value="Submit">
                 </form>
-
+		<span class="error"><?php if($sql_err) {echo $sql_err.'<br>'.'Try again!';} ?></span>
             </div>
         </div>
         <script>
@@ -336,7 +338,7 @@
             function myFunction(xml) {
                 var i, flag = 0, drystate = "";
                 var xmlDoc = xml.responseXML;
-               // debugger;
+                debugger;
                 var x = xmlDoc.getElementsByTagName("state");
 
                 var state = document.getElementById('options').value;
@@ -349,16 +351,17 @@
                         document.getElementById("state_err").innerHTML = " we are unable to ship wine " +
                                 "to AL, AR, DE, KY, MS,  OK, RI, SD, or UT. Due to state laws we are " +
                                 "unable to expedite shipping to AZ or NJ";
+				break;
                         flag = 1;
                     }
+		else{
+			document.getElementById("state_err").innerHTML = "";
+		}
 
                 }
-                if (flag == 0) {
-                    document.getElementById("state_err").style.display = "none";
-                }
+              
 
             }
-
         </script>
 
         <footer>
