@@ -20,7 +20,7 @@ $notIn = 0;
 DEFINE('DB_USER','root');
 DEFINE('DB_PSWD','');
 DEFINE('DB_HOST','localhost');
-DEFINE('DB_NAME','member_info');//AChange dataBAse Name as Desired (second parameter)
+DEFINE('DB_NAME','winestore');//AChange dataBAse Name as Desired (second parameter)
 
 $dbcon = mysqli_connect(DB_HOST,DB_USER,DB_PSWD,DB_NAME);
 
