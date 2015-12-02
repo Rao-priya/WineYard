@@ -105,7 +105,7 @@ echo "Welcome ".$_SESSION['name'];
                     <li><a href="#" title="Nav Link 1" class="a_color">Membership</a>
                         <ul>
                               <li><a href="./benefits.php" title="benefits" class="a_color">Benefits</a></li>
-                            <li><a href="#" title="Register" class="a_color">Register Form</a></li>
+                            <li><a href="./registration.php" title="Register" class="a_color">Register Form</a></li>
 
                         </ul>
                     </li>
