@@ -217,7 +217,7 @@ else
                 }
             }
         }
-        print_r($_SESSION);
+        //print_r($_SESSION);
         ?>
 
         <script src="../js/filter_pasta.js"></script>

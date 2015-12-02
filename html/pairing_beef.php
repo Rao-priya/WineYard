@@ -197,7 +197,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
         }
     }
 }
-print_r($_SESSION);
+//print_r($_SESSION);
 
 ?>
 
