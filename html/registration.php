@@ -309,7 +309,10 @@ if ($fname == "") {
 if($entryError==0){
   $sqlinsert = "INSERT INTO members (FIRST_NAME, LAST_NAME, EMAIL, SHIPPING_ADDRESS, SHIPPING_CITY, SHIPPING_STATE, SHIPPING_ZIP, SHIPPING_COUNTRY, CELLPHONE, DOB, MEMBERSHIP_TYPE, BILLING_ADDRESS, BILLING_CITY, BILLLING_STATE, BILLING_ZIP, BILLING_COUNTRY, USERNAME, PASSWORD) VALUES ('$fname','$lname','$email','$shippingAddr','$shippingCity','$shippingState','$shippingZip','$shippingCountry','$cellPhone','$DOB','$memType','$billingAddr','$billingCity','$billingState','$billingZip','$billingCountry','$username','$pass')";
 if($entryError==0){
-$newrecord = "Congratulations! Welcome to the Wine Tipsy Lifestyle";
+  session_start();
+  $_SESSION['name']=$username;
+  header("location: ./userhomepage.php");
+//$newrecord = "Congratulations! Welcome to the Wine Tipsy Lifestyle";
 }
 //removed title
 // echo $sqlinsert;

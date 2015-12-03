@@ -145,7 +145,7 @@ debugger;
                         </br>
 
                         <h3> New Users </h3>
-                        <div class="button"> <a href = "#" class="abutton"> Register Here </a> </div>
+                        <div class="button"> <a href = "../html/registration.php" class="abutton"> Register Here </a> </div>
                         <br>
 
                         <h3>Check out as </h3>
